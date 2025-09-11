@@ -7,6 +7,7 @@
 #include "GameFramework/Character.h"
 #include "TGCharacterBase.generated.h"
 
+class UTGVitalityAttributeSet;
 class UTGAbilitySystemComponent;
 class UAttributeSet;
 
@@ -19,12 +20,9 @@ public:
 	ATGCharacterBase();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
-	FORCEINLINE UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "GAS")
 	TObjectPtr<UTGAbilitySystemComponent> AbilitySystemComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "GAS")
-	TObjectPtr<UAttributeSet> AttributeSet;
+	
 };

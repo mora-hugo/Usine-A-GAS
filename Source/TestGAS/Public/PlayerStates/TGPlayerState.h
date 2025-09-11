@@ -7,6 +7,7 @@
 #include "AbilitySystemInterface.h"
 #include "TGPlayerState.generated.h"
 
+class UTGVitalityAttributeSet;
 class UTGAbilitySystemComponent;
 class UAttributeSet;
 /**
@@ -20,13 +21,7 @@ public:
 	ATGPlayerState();
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
-	FORCEINLINE UAttributeSet* GetAttributeSet() const { return AttributeSet; }
-
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "GAS")
 	TObjectPtr<UTGAbilitySystemComponent> AbilitySystemComponent;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "GAS")
-	TObjectPtr<UAttributeSet> AttributeSet;
 };

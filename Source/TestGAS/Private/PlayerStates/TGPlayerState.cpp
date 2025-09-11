@@ -5,6 +5,7 @@
 
 #include "GameplayAbilities/TGAbilitySystemComponent.h"
 #include "GameplayAbilities/TGAttributeSet.h"
+#include "GameplayAbilities/AttributeSet/TGVitalityAttributeSet.h"
 
 ATGPlayerState::ATGPlayerState()
 {
@@ -14,7 +15,7 @@ ATGPlayerState::ATGPlayerState()
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Full);
 
-	AttributeSet = CreateDefaultSubobject<UTGAttributeSet>(TEXT("AttributeSet"));
+
 
 	
 }

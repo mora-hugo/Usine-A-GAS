@@ -6,6 +6,7 @@
 #include "AbilitySystemComponent.h"
 #include "TGAbilitySystemComponent.generated.h"
 
+class UTGAttributeSet;
 struct FTGGameplayAbilityDeclaration;
 /**
  * 
@@ -25,7 +26,16 @@ public:
 private:
 	void AddDefaultAbilities();
 
+	void AddDefaultAttributes();
+
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TArray<FTGGameplayAbilityDeclaration> DefaultAbilities;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TArray<TSubclassOf<UAttributeSet>> DefaultAttributeSets;
+
+private:
+	UPROPERTY()
+	TMap<UClass*, const UAttributeSet*> AttributesSets;
 };

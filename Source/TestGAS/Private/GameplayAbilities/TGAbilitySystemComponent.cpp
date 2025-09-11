@@ -10,11 +10,20 @@ void UTGAbilitySystemComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	AddDefaultAbilities();
+	AddDefaultAttributes();
 }
 
 void UTGAbilitySystemComponent::AddDefaultAbilities()
 {
 	GrantAbilities(DefaultAbilities);
+}
+
+void UTGAbilitySystemComponent::AddDefaultAttributes()
+{
+	for (auto AttributeSetClass : DefaultAttributeSets)
+	{
+		AttributesSets.Add(AttributeSetClass.Get(), GetOrCreateAttributeSubobject(AttributeSetClass));
+	}
 }
 
 void UTGAbilitySystemComponent::GrantAbility(const FTGGameplayAbilityDeclaration& AbilityToGrant)

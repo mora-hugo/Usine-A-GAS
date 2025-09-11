@@ -5,6 +5,7 @@
 
 #include "GameplayAbilities/TGAbilitySystemComponent.h"
 #include "GameplayAbilities/TGAttributeSet.h"
+#include "GameplayAbilities/AttributeSet/TGVitalityAttributeSet.h"
 
 
 // Sets default values
@@ -15,8 +16,6 @@ ATGBaseEnnemyCharacter::ATGBaseEnnemyCharacter()
 	AbilitySystemComponent = CreateDefaultSubobject<UTGAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Full);
-
-	AttributeSet = CreateDefaultSubobject<UTGAttributeSet>(TEXT("AttributeSet"));
 }
 
 void ATGBaseEnnemyCharacter::BeginPlay()

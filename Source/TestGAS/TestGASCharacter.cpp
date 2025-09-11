@@ -97,14 +97,8 @@ void ATestGASCharacter::InitializeAbilityComponent()
 		return;
 	}
 
-	AttributeSet = TGPlayerState->GetAttributeSet();
-	if(!AttributeSet)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("No AttributeSet found on PlayerState"));
-		return;
-	}
-
 	AbilitySystemComponent->InitAbilityActorInfo(TGPlayerState, this);
+
 }
 
 void ATestGASCharacter::PossessedBy(AController* NewController)
